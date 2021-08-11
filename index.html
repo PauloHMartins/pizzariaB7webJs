@@ -5,6 +5,9 @@
     <title>Pizzaria da Dede</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -29,12 +32,31 @@
         </div>
     </div>
     <header>
+        <div class="mobileButtons">
+            <div class="tracos"></div>
+            <div class="tracos"></div>
+            <div class="tracos"></div>                
+        </div>
+        <h1>Pizzaria da Dede</h1>
         <div class="menu-openner"><span>0</span>🛒</div>
     </header>
-    <main>
-        <h1>Pizzaria da Dede</h1>
+    <main>    
+        <div class="banner">
+            <div class="opacity-banner">
+                <div class="banner-content">
+                    <h1>Pizzaria da Dede</h1>
+                    <h3>Minha Familia servindo a sua familia com amor e carinho.</h3>
+                </div>
+                <a href="#sabores">Nossas Pizzas</a>
+                <a href="#sobre">Nossa História/Entre em contato</a>
+
+            </div>
+            
+        </div>
+        <h1 id="sabores">Sabores:</h1>
         <div class="pizza-area"></div>
     </main>
+    
     <aside>
         <div class="cart--area">
             <div class="menu-closer">❌</div>
@@ -71,7 +93,7 @@
                     <div class="pizzaInfo--sizes">
                         <div data-key="0" class="pizzaInfo--size">PEQUENA <span>--</span></div>
                         <div data-key="1" class="pizzaInfo--size">MÉDIO <span>--</span></div>
-                        <div data-key="2" class="pizzaInfo--size selected">GRANDE <span>--</span></div>
+                        <div data-key="2" class="pizzaInfo--size">GRANDE <span>--</span></div>
                     </div>
                 </div>
                 <div class="pizzaInfo--pricearea">
@@ -90,6 +112,19 @@
             </div>
         </div>
     </div>
+    <footer>
+        <div id="sobre">
+            <h3>Nossa História</h3>
+            <p>Empresa ficticia criada no curso de JavaScript da <a href="https://b7web.com.br/fullstack/" target="_blank">B7Web</a></p>
+        </div>
+        <div class="contato">
+            <h3>Entre em contato:</h3>
+            <p>Telefone: (34) 3524-0000</p>
+            <p>Email: pizzariadadede@ficticio.com.br</p>
+            <p>Avenida da progamação n° NaN Javascript-Mg</p>
+        </div>
+    </footer>
+    
 
     <script type="text/javascript" src="JS/pizzas.js"></script>
     <script type="text/javascript" src="JS/script.js"></script>

@@ -8,31 +8,49 @@ body {
   display: flex;
   margin: 0;
   min-height: 100vh;
+  flex-direction: column;
 }
 .models {
   display: none;
 }
 
 header {
+  padding: 0px 15px;
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   height: 60px;
-  background-color: #399ade;
+  background-image: url('https://popidi.com/wp-content/uploads/2018/02/banner2-base.jpg');
+  background-position: center;
+  background-size: cover;
   display: none;
-  justify-content: flex-end;
   align-items: center;
 }
+
+header .mobileButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 35px;
+}
+
+header .mobileButtons .tracos {
+  width: 30px;
+  height: 5px;
+  display: block;
+  background-color: #fff;
+}
 .menu-openner {
-  margin-right: 15px;
   font-size: 26px;
-  background-color: #a9dcff;
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 5px 20px;
   border-radius: 5px;
 }
 .menu-openner span {
   margin-right: 10px;
+  color: #fff;
 }
 .menu-closer {
   width: 32px;
@@ -42,11 +60,16 @@ header {
 }
 
 aside {
-  background-color: #9ccbe6;
+  background-color: #388bc5;
   width: 0vw;
+  font-weight: 600;
+  height: 100vh;
   font-family: 'Hepta Slab', Helvetica, Arial;
   transition: all ease 0.2s;
   overflow-x: hidden;
+  border-left: 2px groove #ccc;
+  position: fixed;
+  right: 0;
 }
 aside.show {
   width: 30vw;
@@ -56,12 +79,68 @@ aside.show {
 }
 main {
   flex: 1;
-  padding: 20px;
+  transition: all ease 0.2s;
 }
+
 h1 {
   font-family: 'Hepta Slab', Helvetica, Arial;
-  text-align: center;
 }
+
+main .banner {
+  background-image: url('https://popidi.com/wp-content/uploads/2018/02/banner2-base.jpg');
+  background-position: right;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+main .banner .opacity-banner {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0px 70px;
+}
+
+main .banner .opacity-banner a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e1744d;
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+main .banner .opacity-banner a:hover {
+  border-bottom: 2px solid rgb(238, 238, 238);
+}
+
+main #sabores {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+main .banner .opacity-banner .banner-content {
+  padding: 30px 0px;
+}
+
+main .banner .opacity-banner .banner-content h1 {
+  margin: 0;
+  font-family: 'Zen Loop', cursive;
+  font-size: 60px;
+  color: #f1f1f1;
+}
+
+main .banner .opacity-banner .banner-content h3 {
+  margin: 0;
+  font-family: 'Zen Loop', cursive;
+  font-size: 40px;
+  color: #f1f1f1;
+}
+
 .pizza-area {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -197,7 +276,7 @@ h1 {
   background-color: #ccc;
 }
 .pizzaInfo--size.selected {
-  background-color: #399ade;
+  background-color: #388bc5;
   color: #fff;
 }
 .pizzaInfo--size.selected span {
@@ -261,7 +340,6 @@ h1 {
   text-align: center;
   line-height: 40px;
   margin-bottom: 30px;
-  cursor: pointer;
 }
 .cart {
   margin-bottom: 20px;
@@ -303,8 +381,8 @@ h1 {
 }
 .cart--totalitem {
   padding: 15px 0;
-  border-top: 1px solid #79b9dd;
-  color: #315970;
+  border-top: 1px solid #252233;
+
   display: flex;
   justify-content: space-between;
   font-size: 15px;
@@ -325,11 +403,36 @@ h1 {
   cursor: pointer;
   text-align: center;
   margin-top: 20px;
-  border: 2px solid #63f77c;
+  border: 2px solid #1acc39;
   transition: all ease 0.2s;
 }
 .cart--finalizar:hover {
   background-color: #35af4a;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 70px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+footer h3 {
+  color: #ccc;
+}
+
+footer p {
+  color: #999;
+}
+
+footer a {
+  text-decoration: none;
+  color: #999;
+}
+
+footer a:hover {
+  color: #388bc5;
+  text-decoration: underline;
 }
 
 @media (max-width: 1000px) {
@@ -350,22 +453,32 @@ h1 {
   }
   header {
     display: flex;
+    justify-content: space-between;
   }
+
+  header h1 {
+    font-family: 'Zen Loop', cursive;
+    color: #fff;
+  }
+
+  .banner {
+    display: none;
+  }
+
   main {
     padding-top: 60px;
   }
 
   aside {
-    width: auto;
+    width: 0vw;
     position: fixed;
-    left: 100vw;
     right: 0;
     top: 0;
     bottom: 0;
     transition: all ease 0.2s;
   }
   aside.show {
-    width: auto;
+    width: 100vw;
   }
   .cart--area {
     width: 100vw;
@@ -421,5 +534,8 @@ h1 {
   }
   .pizzaInfo--cancelMobileButton {
     display: block;
+  }
+  footer {
+    flex-direction: column;
   }
 }
